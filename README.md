@@ -1,1 +1,1 @@
-# jjdzr11-trenerzy
+# jjdzr11-homeworks
