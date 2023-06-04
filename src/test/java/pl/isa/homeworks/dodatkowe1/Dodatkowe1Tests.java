@@ -1,7 +1,12 @@
 package pl.isa.homeworks.dodatkowe1;
 
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
+
+import java.util.Map;
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -30,5 +35,17 @@ public class Dodatkowe1Tests {
         assertFalse(Dodatkowe1.isPalindrome(value));
     }
 
+    @ParameterizedTest
+    @MethodSource("provideCountCharactersArguments")
+    public void countCharacters_equalsMap(String value, Map<String, Integer> expected) {
+        assertTrue(Dodatkowe1.countCharacters(value).equals(expected));
+    }
 
+    private static Stream<Arguments> provideCountCharactersArguments() {
+        return Stream.of(
+                Arguments.of("abc", Map.of("a", 1, "b", 1, "c", 1)),
+                Arguments.of("ananas", Map.of("a", 3, "n", 2, "s", 1)),
+                Arguments.of("Ala ma kota", Map.of("a", 4, "l", 1, "m", 1, "k", 1, "o", 1, "t", 1))
+        );
+    }
 }

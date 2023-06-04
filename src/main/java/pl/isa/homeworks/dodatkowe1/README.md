@@ -7,6 +7,8 @@ Zaimplementuj metodę isPrime(), aby zwracała true, jeśli podana wartość jes
 
 ### Liczbowy palindrom
 Analogicznie do palindromów słownych, które przerabialiśmy na warsztatach, stwórz implementację metody isPalindrom(), która dla odmiany szuka ich w liczbach.
-Przykład: 12321 - jest, 12345 - nie jest.
+
+### Liczenie znaków
+Dla podanych wartości w metodzie countCharacters() dodaj implementację, która zliczy wszystkie znaki występujące w danym tekście.
 
 **Powodzenia!**
