@@ -41,11 +41,28 @@ public class Dodatkowe1Tests {
         assertTrue(Dodatkowe1.countCharacters(value).equals(expected));
     }
 
+    @ParameterizedTest
+    @MethodSource("provideIsAnagramArguments")
+    public void isAnagram_equalsExpected(String value, String other, boolean expected) {
+        assertEquals(expected, Dodatkowe1.isAnagram(value, other));
+    }
+
     private static Stream<Arguments> provideCountCharactersArguments() {
         return Stream.of(
                 Arguments.of("abc", Map.of("a", 1, "b", 1, "c", 1)),
                 Arguments.of("ananas", Map.of("a", 3, "n", 2, "s", 1)),
                 Arguments.of("Ala ma kota", Map.of("a", 4, "l", 1, "m", 1, "k", 1, "o", 1, "t", 1))
+        );
+    }
+
+    private static Stream<Arguments> provideIsAnagramArguments() {
+        return Stream.of(
+                Arguments.of("krab", "bark", true),
+                Arguments.of("mama", "tata", false),
+                Arguments.of("Ala ma kota", "Kota ma Ala", true),
+                Arguments.of("Julian Tuwim", "Lutni, ujaw mi!", true),
+                Arguments.of("ananas", "ananasy", false),
+                Arguments.of("mama", "mam", false)
         );
     }
 }

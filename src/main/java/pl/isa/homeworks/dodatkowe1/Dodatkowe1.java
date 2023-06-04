@@ -17,4 +17,8 @@ public final class Dodatkowe1 {
     public static Map<String, Integer> countCharacters(String value) {
         return null;
     }
+
+    public static boolean isAnagram(String value, String other) {
+        return false;
+    }
 }
