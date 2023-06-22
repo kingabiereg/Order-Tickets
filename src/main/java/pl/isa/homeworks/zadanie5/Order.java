@@ -1,12 +1,20 @@
 package pl.isa.homeworks.zadanie5;
 
+import java.util.List;
+
 public class Order {
+
+    private List<Ticket> tickets;
+
     public void addTicket(Ticket ticket) {
-        // TODO: implement
+        tickets.add(ticket);
     }
 
     public int getTotalPrice() {
-        // TODO: implement
-        return 0;
+        int totalPrice = 0;
+        for (Ticket ticket : tickets) {
+            totalPrice = totalPrice + ticket.getPrice();
+        }
+        return totalPrice;
     }
 }
