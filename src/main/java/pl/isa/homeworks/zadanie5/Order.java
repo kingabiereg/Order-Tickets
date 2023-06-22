@@ -2,7 +2,8 @@ package pl.isa.homeworks.zadanie5;
 
 import java.util.List;
 
-public class Order {
+public class
+Order {
 
     private List<Ticket> tickets;
 

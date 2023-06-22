@@ -1,17 +1,26 @@
 ## Zadanie 4 - webowa skrzynka z narzędziami
 
-W klasie Dodatkowe1 znajdziesz metody do implementacji, natomiast w klasie Dodatkowe1Tests znajdziesz testy, które powinny przechodzić, jeśli poprawnie zaimplementujesz każdą metodę ;)
+W klasie Dodatkowe1 znajdziesz metody do implementacji, natomiast w klasie Dodatkowe1Tests znajdziesz testy, które
+powinny przechodzić, jeśli poprawnie zaimplementujesz każdą metodę ;)
 
 ### Liczba pierwsza
-Zaimplementuj metodę isPrime(), aby zwracała true jeśli podana wartość jest liczbą pierwszą lub false jeśli nią nie jest.
+
+Zaimplementuj metodę isPrime(), aby zwracała true jeśli podana wartość jest liczbą pierwszą lub false jeśli nią nie
+jest.
 
 ### Liczbowy palindrom
-Analogicznie do palindromów słownych, które przerabialiśmy na warsztatach, stwórz implementację metody isPalindrom(), która dla odmiany szuka ich w liczbach.
+
+Analogicznie do palindromów słownych, które przerabialiśmy na warsztatach, stwórz implementację metody isPalindrom(),
+która dla odmiany szuka ich w liczbach.
 
 ### Liczenie znaków
-Dla podanych wartości w metodzie countCharacters() dodaj implementację, która zliczy wszystkie znaki występujące w danym tekście.
+
+Dla podanych wartości w metodzie countCharacters() dodaj implementację, która zliczy wszystkie znaki występujące w danym
+tekście.
 
 ### Anagram
-Porównaj w metodzie isAnagram() oba przekazane parametry i zwróć true, jeżeli podane teksty są anagramami lub false jeśli nie są.
+
+Porównaj w metodzie isAnagram() oba przekazane parametry i zwróć true, jeżeli podane teksty są anagramami lub false
+jeśli nie są.
 
 **Powodzenia!**
