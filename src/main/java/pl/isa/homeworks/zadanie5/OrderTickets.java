@@ -3,8 +3,29 @@ package pl.isa.homeworks.zadanie5;
 import java.util.List;
 
 public final class OrderTickets {
+
     public static Order takeOrder(List<Person> people) {
-        // TODO: implement
-        return null;
+        Order order = new Order();
+        for (Person person : people) {
+            Ticket ticket = ticketCategory(person);
+            order.addTicket(ticket);
+        }
+        return order;
+    }
+
+    private static Ticket ticketCategory(Person person) {
+
+        int age = 0;
+
+        if (age <= 5) {
+            return new Ticket("Child", 0);
+        } else if (age > 5 && age < 15) {
+            return new Ticket("Teenager", 10);
+        } else if (age > 15 && age < 26) {
+            return new Ticket("Students", 12);
+        } else {
+            return new Ticket("Adults", 15);
+        }
     }
 }
+
