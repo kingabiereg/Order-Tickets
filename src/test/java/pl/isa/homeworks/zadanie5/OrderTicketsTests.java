@@ -32,7 +32,6 @@ public class OrderTicketsTests {
 
         assertEquals(27, orderTicket.getTotalPrice());
     }
-
     @Test
     void getAged() {
         Person person = new Person(28, false);
