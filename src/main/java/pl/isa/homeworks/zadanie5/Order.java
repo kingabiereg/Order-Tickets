@@ -1,11 +1,12 @@
 package pl.isa.homeworks.zadanie5;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class
 Order {
 
-    private List<Ticket> tickets;
+    private List<Ticket> tickets = new ArrayList<>();
 
     public void addTicket(Ticket ticket) {
         tickets.add(ticket);
@@ -18,4 +19,5 @@ Order {
         }
         return totalPrice;
     }
+
 }

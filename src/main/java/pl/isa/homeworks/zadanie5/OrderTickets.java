@@ -22,9 +22,9 @@ public final class OrderTickets {
         } else if (age > 5 && age < 15) {
             return new Ticket("Teenager", 10);
         } else if (age > 15 && age < 26) {
-            return new Ticket("Students", 12);
+            return new Ticket("Student", 12);
         } else {
-            return new Ticket("Adults", 15);
+            return new Ticket("Adult", 15);
         }
     }
 }
