@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class OrderTicketsTests {
 
     @Test
-    void takeOrder1() {
+    void getTotalPriceWhenBuyChildAndAdultTickets() {
 
         List<Person> people = new ArrayList<>();
 
@@ -24,7 +24,7 @@ public class OrderTicketsTests {
     }
 
     @Test
-    void takeOrder2() {
+    void getTotalPriceWhenBuyManyDifferentTickets() {
 
         List<Person> people = new ArrayList<>();
 
@@ -46,7 +46,7 @@ public class OrderTicketsTests {
     }
 
     @Test
-    void takeOrder3() {
+    void getTotalPriceWhenChildBuysTicket() {
 
         List<Person> people = new ArrayList<>();
 
@@ -60,7 +60,7 @@ public class OrderTicketsTests {
     }
 
     @Test
-    void takeOrder4() {
+    void getTotalPriceWhenPeopleAreLearning() {
 
         List<Person> people = new ArrayList<>();
 
@@ -74,7 +74,7 @@ public class OrderTicketsTests {
     }
 
     @Test
-    void takeOrder5() {
+    void getTotalPriceWhenBuyStudentAndAdultTickets() {
 
         List<Person> people = new ArrayList<>();
 
@@ -87,6 +87,37 @@ public class OrderTicketsTests {
         assertEquals(27, OrderTickets.takeOrder(people).getTotalPrice());
     }
 
+    @Test
+    void getPriceOfTicketsWhenPersonIsLearning() {
+
+        List<Person> students = new ArrayList<>();
+
+        Person student = new Person(26, true);
+        Person student1 = new Person(14, true);
+
+        Ticket ticket = OrderTickets.ticketCategory(student);
+        Ticket ticket1 = OrderTickets.ticketCategory(student1);
+
+        students.add(student);
+        students.add(student1);
+
+        assertEquals(12, ticket.getPrice());
+        assertEquals(10, ticket1.getPrice());
+    }
+
+    @Test
+    void getNamesOfTicketsWhenBuyChildAndAdultTickets() {
+
+        Person child = new Person(0, false);
+        Person adult = new Person(32, false);
+
+        Ticket ticket = OrderTickets.ticketCategory(child);
+        Ticket ticket1 = OrderTickets.ticketCategory(adult);
+
+        assertEquals("Child", ticket.getName());
+        assertEquals("Adult", ticket1.getName());
+
+    }
 }
 
 
