@@ -18,7 +18,7 @@ public final class OrderTickets {
 
         int age = person.getAge();
 
-        if (age <= 5) {
+        if (age >= 0 && age <= 5) {
             return new Ticket("Child", 0);
         } else if (age > 5 && age < 15) {
             return new Ticket("Teenager", 10);
