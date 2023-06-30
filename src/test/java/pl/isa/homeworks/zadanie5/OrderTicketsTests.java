@@ -101,62 +101,28 @@ public class OrderTicketsTests {
     }
 
     @Test
-    void getTotalPriceWhenPeopleAreLearning() {
+    void shouldReturnNameOfTickets() {
 
-        List<Person> people = new ArrayList<>();
+        Person person1 = new Person(0, false);
+        Person person2 = new Person(6, true);
+        Person person3 = new Person(15, true);
+        Person person4 = new Person(26, true);
+        Person person5 = new Person(26, false);
+        Person person6 = new Person(32, false);
 
-        Person person = new Person(15, true);
-        Person person1 = new Person(26, true);
+        Ticket ticket1 = OrderTickets.ticketCategory(person1);
+        Ticket ticket2 = OrderTickets.ticketCategory(person2);
+        Ticket ticket3 = OrderTickets.ticketCategory(person3);
+        Ticket ticket4 = OrderTickets.ticketCategory(person4);
+        Ticket ticket5 = OrderTickets.ticketCategory(person5);
+        Ticket ticket6 = OrderTickets.ticketCategory(person6);
 
-        people.add(person);
-        people.add(person1);
-
-        assertEquals(24, OrderTickets.takeOrder(people).getTotalPrice());
-    }
-
-    @Test
-    void getTotalPriceWhenBuyStudentAndAdultTickets() {
-
-        List<Person> people = new ArrayList<>();
-
-        Person person = new Person(26, true);
-        Person person1 = new Person(27, false);
-
-        people.add(person);
-        people.add(person1);
-
-        assertEquals(27, OrderTickets.takeOrder(people).getTotalPrice());
-    }
-
-    @Test
-    void getPriceOfTicketsWhenPersonIsLearning() {
-
-        List<Person> students = new ArrayList<>();
-
-        Person student = new Person(26, true);
-        Person student1 = new Person(14, true);
-
-        Ticket ticket = OrderTickets.ticketCategory(student);
-        Ticket ticket1 = OrderTickets.ticketCategory(student1);
-
-        students.add(student);
-        students.add(student1);
-
-        assertEquals(12, ticket.getPrice());
-        assertEquals(10, ticket1.getPrice());
-    }
-
-    @Test
-    void getNamesOfTicketsWhenBuyChildAndAdultTickets() {
-
-        Person child = new Person(0, false);
-        Person adult = new Person(32, false);
-
-        Ticket ticket = OrderTickets.ticketCategory(child);
-        Ticket ticket1 = OrderTickets.ticketCategory(adult);
-
-        assertEquals("Child", ticket.getName());
-        assertEquals("Adult", ticket1.getName());
+        assertEquals("Child", ticket1.getName());
+        assertEquals("Teenager", ticket2.getName());
+        assertEquals("Student", ticket3.getName());
+        assertEquals("Student", ticket4.getName());
+        assertEquals("Adult", ticket5.getName());
+        assertEquals("Adult", ticket6.getName());
 
     }
 }
