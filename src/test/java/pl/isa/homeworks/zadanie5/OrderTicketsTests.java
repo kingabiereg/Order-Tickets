@@ -26,6 +26,21 @@ public class OrderTicketsTests {
     }
 
     @Test
+    @DisplayName("Should return 20 when buy teenager tickets")
+    void shouldReturn20WhenBuyTeenagerTickets() {
+
+        List<Person> people = new ArrayList<>();
+
+        Person person = new Person(6, false);
+        Person person1 = new Person(14, true);
+
+        people.add(person);
+        people.add(person1);
+
+        assertEquals(20, OrderTickets.takeOrder(people).getTotalPrice());
+    }
+
+    @Test
     void getTotalPriceWhenBuyManyDifferentTickets() {
 
         List<Person> people = new ArrayList<>();
