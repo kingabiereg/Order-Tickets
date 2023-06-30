@@ -1,5 +1,6 @@
 package pl.isa.homeworks.zadanie5;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -10,17 +11,18 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class OrderTicketsTests {
 
     @Test
-    void getTotalPriceWhenBuyChildAndAdultTickets() {
+    @DisplayName("Should return zero when buy child tickets")
+    void shouldReturnZeroWhenBuyChildTickets() {
 
         List<Person> people = new ArrayList<>();
 
-        Person person = new Person(2, false);
-        Person person1 = new Person(32, false);
+        Person person = new Person(0, false);
+        Person person1 = new Person(5, false);
 
         people.add(person);
         people.add(person1);
 
-        assertEquals(15, OrderTickets.takeOrder(people).getTotalPrice());
+        assertEquals(0, OrderTickets.takeOrder(people).getTotalPrice());
     }
 
     @Test
