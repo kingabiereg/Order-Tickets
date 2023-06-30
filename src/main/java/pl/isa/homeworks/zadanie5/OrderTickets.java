@@ -17,12 +17,13 @@ public final class OrderTickets {
     public static Ticket ticketCategory(Person person) {
 
         int age = person.getAge();
+        boolean isLearning = person.isLearning();
 
         if (age >= 0 && age <= 5) {
             return new Ticket("Child", 0);
         } else if (age > 5 && age < 15) {
             return new Ticket("Teenager", 10);
-        } else if (age >= 15 && age <= 26) {
+        } else if (age >= 15 && age <= 26 && isLearning) {
             return new Ticket("Student", 12);
         } else {
             return new Ticket("Adult", 15);
