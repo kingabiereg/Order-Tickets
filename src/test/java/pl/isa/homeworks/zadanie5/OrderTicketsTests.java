@@ -41,6 +41,21 @@ public class OrderTicketsTests {
     }
 
     @Test
+    @DisplayName("Should return 24 when buy student tickets")
+    void shouldReturn24WhenBuyStudentTickets() {
+
+        List<Person> people = new ArrayList<>();
+
+        Person person = new Person(15, false);
+        Person person1 = new Person(26, false);
+
+        people.add(person);
+        people.add(person1);
+
+        assertEquals(24, OrderTickets.takeOrder(people).getTotalPrice());
+    }
+
+    @Test
     void getTotalPriceWhenBuyManyDifferentTickets() {
 
         List<Person> people = new ArrayList<>();
@@ -62,19 +77,7 @@ public class OrderTicketsTests {
         assertEquals(64, OrderTickets.takeOrder(people).getTotalPrice());
     }
 
-    @Test
-    void getTotalPriceWhenChildBuysTicket() {
 
-        List<Person> people = new ArrayList<>();
-
-        Person person = new Person(0, false);
-        Person person1 = new Person(5, false);
-
-        people.add(person);
-        people.add(person1);
-
-        assertEquals(0, OrderTickets.takeOrder(people).getTotalPrice());
-    }
 
     @Test
     void getTotalPriceWhenPeopleAreLearning() {
