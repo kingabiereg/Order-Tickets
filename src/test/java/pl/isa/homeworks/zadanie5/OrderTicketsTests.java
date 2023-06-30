@@ -96,7 +96,6 @@ public class OrderTicketsTests {
         people.add(person8);
         people.add(person9);
 
-
         assertEquals(89, OrderTickets.takeOrder(people).getTotalPrice());
     }
 
@@ -123,7 +122,31 @@ public class OrderTicketsTests {
         assertEquals("Student", ticket4.getName());
         assertEquals("Adult", ticket5.getName());
         assertEquals("Adult", ticket6.getName());
+    }
 
+    @Test
+    void shouldReturnPriceOfTickets() {
+
+        Person person1 = new Person(0, false);
+        Person person2 = new Person(6, true);
+        Person person3 = new Person(15, true);
+        Person person4 = new Person(26, true);
+        Person person5 = new Person(26, false);
+        Person person6 = new Person(32, false);
+
+        Ticket ticket1 = OrderTickets.ticketCategory(person1);
+        Ticket ticket2 = OrderTickets.ticketCategory(person2);
+        Ticket ticket3 = OrderTickets.ticketCategory(person3);
+        Ticket ticket4 = OrderTickets.ticketCategory(person4);
+        Ticket ticket5 = OrderTickets.ticketCategory(person5);
+        Ticket ticket6 = OrderTickets.ticketCategory(person6);
+
+        assertEquals(0, ticket1.getPrice());
+        assertEquals(10, ticket2.getPrice());
+        assertEquals(12, ticket3.getPrice());
+        assertEquals(12, ticket4.getPrice());
+        assertEquals(15, ticket5.getPrice());
+        assertEquals(15, ticket6.getPrice());
     }
 }
 
